@@ -16,7 +16,7 @@ def query_model(payload):
     else:
         raise HTTPException(status_code=response.status_code, detail="Model query failed")
 
-@app.post("/process_image/")
+@app.post("/generate_image/")
 async def process_image(image_query: dict):
     if 'image_query' not in image_query:
         raise HTTPException(status_code=400, detail="image_query field is required")
